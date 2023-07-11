@@ -18,7 +18,6 @@ from concurrent.futures import ThreadPoolExecutor
 from aiohttp import ClientSession as aioClientSession
 from psutil import virtual_memory, cpu_percent, disk_usage
 from requests import get as rget
-from mega import MegaApi
 from pyrogram.enums import ChatType
 from pyrogram.types import BotCommand
 from pyrogram.errors import PeerIdInvalid
@@ -177,7 +176,6 @@ def get_rclone_version():
 class EngineStatus:
     STATUS_ARIA = f"Aria2 v{aria2.client.get_version()['version']}"
     STATUS_GD = f"Google-API v{get_distribution('google-api-python-client').version}"
-    STATUS_MEGA = f"MegaSDK v{MegaApi('test').getVersion()}"
     STATUS_QB = f"qBit {get_client().app.version}"
     STATUS_TG = f"Pyrogram v{get_distribution('pyrogram').version}"
     STATUS_YT = f"yt-dlp v{get_distribution('yt-dlp').version}"
